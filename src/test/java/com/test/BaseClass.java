@@ -10,6 +10,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.ie.InternetExplorerOptions;
 import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.safari.SafariOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -27,11 +28,11 @@ public class BaseClass {
         } else if (System.getProperty("browser").equalsIgnoreCase("Firefox")) {
             WebDriverManager.firefoxdriver().setup();
             FirefoxOptions options = new FirefoxOptions();
+            options.setHeadless(true);
             driver = new FirefoxDriver(options);
         } else if (System.getProperty("browser").equalsIgnoreCase("IE")) {
             WebDriverManager.iedriver().setup();
-            InternetExplorerOptions options = new InternetExplorerOptions();
-            driver = new InternetExplorerDriver(options);
+            driver = new InternetExplorerDriver();
         } else if (System.getProperty("browser").equalsIgnoreCase("Safari")) {
             WebDriverManager.safaridriver().setup();
             driver = new SafariDriver();
