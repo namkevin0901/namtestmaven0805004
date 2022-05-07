@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="First Suite" verbose="1">
+    <test name="Second Test - TC01 - TC03">
+        <classes>
+            <class name="com.test.TestCase01">
+                <methods>
+                    <include name="TC01" />
+                    <include name="TC03" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
